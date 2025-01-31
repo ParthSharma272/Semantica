@@ -36,8 +36,8 @@ A book recommendation system that combines semantic search with to provide perso
 - Create a .env file with your OpenAI API key
 - Run the dashboard: python gradio-dashboard.py
 
-Acknowledgments
-Tutorial from freecodecamp.org: https://www.youtube.com/watch?v=Q7mS1VHm3Yw&ab_channel=freeCodeCamp.org
-Book metadata sourced from Kaggle dataset: https://www.kaggle.com/datasets/dylanjcastillo/7k-books-with-metadata
-Emotion analysis model by J. Hartmann
-Built with OpenAI's embedding technology
+#Acknowledgments
+- Tutorial from freecodecamp.org: https://www.youtube.com/watch?v=Q7mS1VHm3Yw&ab_channel=freeCodeCamp.org
+- Book metadata sourced from Kaggle dataset: https://www.kaggle.com/datasets/dylanjcastillo/7k-books-with-metadata
+- Emotion analysis model by J. Hartmann
+- Built with OpenAI's embedding technology

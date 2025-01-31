@@ -10,12 +10,12 @@ A book recommendation system that combines semantic search with to provide perso
 - Large Dataset: Powered by a curated dataset of over 5,000 books with rich metadata
 
 # Technical Stack:
-Backend: Python with LangChain for vector search
-Embeddings: OpenAI Embeddings
-Vector Store: Chroma DB
-Emotion Analysis: DistilRoBERTa for text classification
-UI Framework: Gradio
-Data Processing: Pandas & NumPy
+- Backend: Python with LangChain for vector search
+- Embeddings: OpenAI Embeddings
+- Vector Store: Chroma DB
+- Emotion Analysis: DistilRoBERTa for text classification
+- UI Framework: Gradio
+- Data Processing: Pandas & NumPy
 
 # Data Pipeline:
 1.Initial data cleaning and preprocessing
@@ -25,16 +25,16 @@ Data Processing: Pandas & NumPy
 5.Integration with Chroma vector store
 
 # Key Components
-Data Processing
-Sentiment Analysis
-Recommendation Engine
+- Data Processing
+- Sentiment Analysis
+- Recommendation Engine
 
 
 # Getting Started:
-Clone the repository
-Install dependencies: pip install -r requirements.txt
-Create a .env file with your OpenAI API key
-Run the dashboard: python gradio-dashboard.py
+- Clone the repository
+- Install dependencies: pip install -r requirements.txt
+- Create a .env file with your OpenAI API key
+- Run the dashboard: python gradio-dashboard.py
 
 Acknowledgments
 Tutorial from freecodecamp.org: https://www.youtube.com/watch?v=Q7mS1VHm3Yw&ab_channel=freeCodeCamp.org

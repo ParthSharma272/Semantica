@@ -2,12 +2,12 @@
 A book recommendation system that combines semantic search with to provide personalized book suggestions based on natural language queries and filtering.
 
 # Features:
-Natural Language Search: Users can describe the kind of book they're looking for in plain English
-Semantic Understanding: Utilizes OpenAI embeddings for intelligent book matching
-Emotional Analysis: Books are classified by emotional tone (Happy, Surprising, Angry, Suspenseful, Sad)
-Category Filtering: Filter recommendations by fiction/non-fiction categories
-Interactive UI: Clean, modern interface built with Gradio
-Large Dataset: Powered by a curated dataset of over 5,000 books with rich metadata
+-Natural Language Search: Users can describe the kind of book they're looking for in plain English
+-Semantic Understanding: Utilizes OpenAI embeddings for intelligent book matching
+-Emotional Analysis: Books are classified by emotional tone (Happy, Surprising, Angry, Suspenseful, Sad)
+-Category Filtering: Filter recommendations by fiction/non-fiction categories
+-Interactive UI: Clean, modern interface built with Gradio
+-Large Dataset: Powered by a curated dataset of over 5,000 books with rich metadata
 
 # Technical Stack:
 Backend: Python with LangChain for vector search

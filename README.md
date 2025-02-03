@@ -1,5 +1,5 @@
 # Semantic Book Recommender 📚
-A book recommendation system that combines semantic search with to provide personalized book suggestions based on natural language queries and filtering.
+A personalized book recommendation system that combines semantic search and filters to suggest books based on natural language queries.
 
 # Features:
 - Natural Language Search: Users can describe the kind of book they're looking for in plain English

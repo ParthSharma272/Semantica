@@ -2,6 +2,11 @@
 
 A personalized book recommendation system that combines semantic search and advanced filtering to suggest books based on natural language queries.
 
+## Screenshot
+
+<img width="613" alt="Screenshot 2025-05-22 at 11 23 51 AM" src="https://github.com/user-attachments/assets/dee61a1f-8ec2-4536-8d37-50e2e62617a0" />
+
+
 ## Features
 
 - **Natural Language Search**: Describe the kind of book you're looking for in plain English.

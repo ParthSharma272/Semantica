@@ -19,7 +19,7 @@ A personalized book recommendation system that combines semantic search and adva
 ## Technical Stack
 
 - **Backend**: Python with LangChain for vector search
-- **Embeddings**: OpenAI Embeddings
+- **Embeddings**: HuggingFace Embeddings
 - **Vector Store**: Chroma DB
 - **Emotion Analysis**: DistilRoBERTa for text classification
 - **UI Framework**: Gradio

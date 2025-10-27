@@ -2,6 +2,11 @@
 
 Modern web application that pairs a semantic-search backend with a glassmorphic React frontend to surface book recommendations that match a reader's curiosity, tone preference, and genre interests.
 
+<img width="1680" height="930" alt="Screenshot 2025-10-27 at 11 33 59 PM" src="https://github.com/user-attachments/assets/75891fe4-8567-4bec-acf3-6fbfd893cfe1" />
+<img width="1680" height="932" alt="Screenshot 2025-10-27 at 10 56 21 PM" src="https://github.com/user-attachments/assets/63c13ad5-2b73-4daf-9aa5-2c04d32ae2f9" />
+<img width="1680" height="928" alt="Screenshot 2025-10-27 at 10 56 29 PM" src="https://github.com/user-attachments/assets/2490b22b-0a57-4681-9231-e9214eef1dd1" />
+
+
 ## Features
 - Natural-language search turns plain-text prompts into book matches using dense vector similarity.
 - Mood and genre filters refine results by tone tags (e.g., uplifting, dark) and curated category facets.

@@ -1,12 +1,6 @@
+@import 'tailwindcss';
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; /* Dark background */
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,46 +8,33 @@
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center; /* Center content horizontally */
-  min-width: 320px;
   min-height: 100vh;
-  padding: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #0f172a;
+  background-image: radial-gradient(at 20% 20%, rgba(56, 189, 248, 0.35) 0px, transparent 55%),
+    radial-gradient(at 80% 0%, rgba(59, 130, 246, 0.4) 0px, transparent 60%),
+    radial-gradient(at 0% 80%, rgba(244, 114, 182, 0.25) 0px, transparent 55%);
+  color: #e2e8f0;
+  margin: 0;
 }
 
-#root {
-  max-width: 1280px;
-  width: 100%; /* Make root take full width */
-  margin: 0 auto; /* Center root content */
-  padding: 1rem 2rem; /* Add some padding */
-  text-align: center;
-  box-sizing: border-box;
+.glass-panel {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 25px 70px -25px rgba(15, 23, 42, 0.65);
 }
 
-/* Basic light/dark mode consistency (adjust as needed) */
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.gradient-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.35), transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(244, 114, 182, 0.25), transparent 65%);
 }
 
-/* Remove default button padding/border if desired */
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    /* background-color: #1a1a1a; */ /* Handled by App.css */
-    cursor: pointer;
-    transition: border-color 0.25s;
-  }
+.bg-noise {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22 viewBox=%220 0 40 40%22%3E%3Cpath fill=%22rgba(255,255,255,0.04)%22 d=%22M0 0h4v4H0zm20 20h4v4h-4zM40 40h4v4h-4zm-20-20h4v4h-4z%22/%3E%3C/svg%3E');
+}

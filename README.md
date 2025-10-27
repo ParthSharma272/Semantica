@@ -4,7 +4,8 @@ A personalized book recommendation system that combines semantic search and adva
 
 ## Screenshot
 
-<img width="613" alt="Screenshot 2025-05-22 at 11 23 51 AM" src="https://github.com/user-attachments/assets/dee61a1f-8ec2-4536-8d37-50e2e62617a0" />
+
+<img width="1680" height="930" alt="Screenshot 2025-10-27 at 11 33 59 PM" src="https://github.com/user-attachments/assets/1d09ebcc-a16b-40b2-b9f7-1a056d106c13" />
 
 
 ## Features

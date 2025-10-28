@@ -102,6 +102,19 @@ npm run preview  # optional sanity check
 5. Configure CORS in FastAPI to allow the frontend host. Verify end-to-end requests succeed.
 6. Add custom domains and TLS in Render settings if needed.
 
+### Docker builds
+- Backend image: `docker build -t semantic-book-backend .`
+- Frontend image: `docker build -t semantic-book-frontend semantic-book-ui --build-arg VITE_API_BASE_URL=http://localhost:8000`
+- Run backend locally (mounting vectors):
+	```bash
+	docker run --rm -p 8000:8000 \
+		-e GOOGLE_API_KEY=... \
+		-e CORS_ORIGINS=http://localhost:5173 \
+		-v $(pwd)/db-books:/data/chroma \
+		semantic-book-backend
+	```
+- Serve the frontend: `docker run --rm -p 8080:8080 semantic-book-frontend`
+
 Other hosts (Railway, Fly.io, Netlify + backend) work with similar steps—ensure the API has persistent storage and the frontend references the deployed API URL.
 
 ## Troubleshooting

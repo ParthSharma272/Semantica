@@ -29,7 +29,7 @@ if not os.getenv("GOOGLE_API_KEY"):
 # --- Constants ---
 BOOKS_CSV_PATH = "books_with_emotions.csv"
 DEFAULT_COVER = "cover-not-found.jpg" # Ideally, host this image somewhere accessible online
-PERSIST_DIRECTORY = "db-books"
+PERSIST_DIRECTORY = os.getenv("CHROMA_PATH", "db-books")
 COLLECTION_NAME = "books"
 # Make sure this matches the model you used for embedding
 GEMINI_MODEL_NAME = "models/gemini-embedding-exp-03-07" # Use the stable embedding model unless you have specific needs for exp
@@ -59,6 +59,7 @@ except Exception as e:
 collections = None # Initialize collections to None
 try:
     logging.info(f"Initializing Gemini Embeddings model: {GEMINI_MODEL_NAME}")
+    logging.info(f"Using Chroma persistence directory: {PERSIST_DIRECTORY}")
     gemini_embeddings = GoogleGenerativeAIEmbeddings(model=GEMINI_MODEL_NAME)
 
     logging.info(f"Connecting to persistent ChromaDB at: {PERSIST_DIRECTORY}")
@@ -188,11 +189,16 @@ app = FastAPI(
 
 # --- CORS Middleware ---
 # Allows your React app (running on a different port) to call the API
-origins = [
-    "http://localhost:3000", # Default React dev port
-    "http://localhost:5173",
-    "http://localhost:5174",# Default Vite dev port
-]
+cors_origins_env = os.getenv("CORS_ORIGINS")
+if cors_origins_env:
+    origins = [origin.strip() for origin in cors_origins_env.split(",") if origin.strip()]
+else:
+    origins = [
+        "http://localhost:3000", # Default React dev port
+        "http://localhost:5173",
+        "http://localhost:5174", # Default Vite dev port
+    ]
+    logging.warning("CORS_ORIGINS not set; falling back to default localhost origins.")
 
 app.add_middleware(
     CORSMiddleware,

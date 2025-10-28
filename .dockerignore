@@ -1,0 +1,14 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.env
+notebooks/
+*.ipynb
+semantic-book-ui/node_modules/
+semantic-book-ui/dist/
+semantic-book-ui/.vite/
+db-books/

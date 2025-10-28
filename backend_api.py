@@ -66,9 +66,13 @@ try:
     chroma_client = chromadb.PersistentClient(path=PERSIST_DIRECTORY)
 
     logging.info(f"Getting collection: {COLLECTION_NAME}")
-    # Check if collection exists before creating Chroma object (Corrected for Chroma v0.6+)
-    existing_collection_names = chroma_client.list_collections() # Get the list of names directly
-    if COLLECTION_NAME in existing_collection_names:             # Check if our name is in the list
+    # Check if collection exists before creating Chroma object (supports older/newer Chroma versions)
+    raw_collections = chroma_client.list_collections()
+    existing_collection_names = [
+        getattr(item, "name", item) for item in raw_collections
+    ]
+    logging.info(f"Available collections: {existing_collection_names}")
+    if COLLECTION_NAME in existing_collection_names:
         collections = Chroma(
             client=chroma_client,
             collection_name=COLLECTION_NAME,

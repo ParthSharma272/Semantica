@@ -19,6 +19,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY backend_api.py ./
 COPY books_with_emotions.csv ./
 COPY cover-not-found.jpg ./
+COPY db-books ./db-books
 
 # Copy any other runtime assets (e.g., data cleaning scripts, GIF)
 COPY book-reco.gif ./book-reco.gif

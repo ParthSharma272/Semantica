@@ -94,13 +94,27 @@ npm run preview  # optional sanity check
 - Write unit or integration tests (e.g., Vitest for React, pytest for FastAPI) as you extend functionality.
 - Use feature branches and pull requests; CI can run lint, tests, and `npm run build` / `pytest`.
 
-## Deployment (Render Example)
+## Free Demo Deployment (Render + Netlify)
+1. Push the repo to GitHub and confirm `db-books/` is committed (vectors ship with the backend image).
+2. Copy `.env.example` to `.env`, fill in `GOOGLE_API_KEY`, and keep `CHROMA_PATH=./db-books` for local testing.
+3. **Backend on Render**
+	- Create a Web Service → select repo root → build command `pip install -r requirements.txt` → start command `uvicorn backend_api:app --host 0.0.0.0 --port 10000`.
+	- Environment variables: `GOOGLE_API_KEY`, `CHROMA_PATH=/app/db-books`, and eventually `CORS_ORIGINS=https://<your-netlify-site>` (include localhost origins while testing).
+	- No persistent disk required—the Docker image already contains `db-books/`.
+	- Deploy and note the URL `https://<backend>.onrender.com`.
+4. **Frontend on Netlify**
+	- Connect the repo → set base directory `semantic-book-ui` → build command `npm run build` → publish directory `dist`.
+	- Add `VITE_API_BASE_URL=https://<backend>.onrender.com` in Netlify UI.
+	- Deploy and grab the Netlify URL.
+5. Return to Render → update `CORS_ORIGINS` so it includes the Netlify domain and redeploy the backend.
+6. Smoke test the Netlify site; the first request may take a few seconds when the Render service wakes up.
+
+### Render-only Variant
 1. Push repository to GitHub.
-2. **Backend**: create a Render Web Service pointing to repo root. Build command `pip install -r requirements.txt`; start command `uvicorn backend_api:app --host 0.0.0.0 --port 10000`. Attach a persistent disk at `/var/data/chroma` and set `CHROMA_PATH=/var/data/chroma`.
-3. Upload the contents of `db-books/` to the mounted disk via Render shell (or recreate embeddings at runtime).
-4. **Frontend**: create Render Static Site pointing to `semantic-book-ui/`, build command `npm install && npm run build`, publish directory `dist`. Set `VITE_API_BASE_URL` to the backend Render URL.
-5. Configure CORS in FastAPI to allow the frontend host. Verify end-to-end requests succeed.
-6. Add custom domains and TLS in Render settings if needed.
+2. **Backend**: create a Render Web Service pointing to repo root. Build command `pip install -r requirements.txt`; start command `uvicorn backend_api:app --host 0.0.0.0 --port 10000`. If you prefer persistent storage, attach a disk at `/var/data/chroma` and set `CHROMA_PATH=/var/data/chroma` then upload `db-books/`.
+3. **Frontend**: create Render Static Site pointing to `semantic-book-ui/`, build command `npm install && npm run build`, publish directory `dist`. Set `VITE_API_BASE_URL` to the backend Render URL.
+4. Configure CORS in FastAPI to allow the frontend host. Verify end-to-end requests succeed.
+5. Add custom domains and TLS in Render settings if needed.
 
 ### Docker builds
 - Backend image: `docker build -t semantic-book-backend .`

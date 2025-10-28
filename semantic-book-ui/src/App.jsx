@@ -6,7 +6,7 @@ import BookGallery from './components/BookGallery';
 import BookDetail from './components/BookDetail';
 import './App.css';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 // A new, small component for our Logo
 function Logo() {

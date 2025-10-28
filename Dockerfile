@@ -26,10 +26,10 @@ COPY book-reco.gif ./book-reco.gif
 
 # Default environment configuration; override via Fly secrets in production
 ENV PORT=8000 \
-    CHROMA_PATH=/data/chroma \
+    CHROMA_PATH=/app/db-books \
     CORS_ORIGINS=http://localhost:5173
 
-# Ensure the persistence directory exists (will be replaced by Fly volume)
+# Ensure the persistence directory exists (keeps compatibility if overridden)
 RUN mkdir -p ${CHROMA_PATH}
 
 EXPOSE ${PORT}

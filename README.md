@@ -5,6 +5,10 @@ Modern web application that pairs a semantic-search backend with a glassmorphic 
 <img width="1680" height="930" alt="Screenshot 2025-10-27 at 11 33 59 PM" src="https://github.com/user-attachments/assets/75891fe4-8567-4bec-acf3-6fbfd893cfe1" />
 
 
+## Live Demo
+- Netlify: https://semanticbookrec.netlify.app/
+
+
 
 ## Features
 - Natural-language search turns plain-text prompts into book matches using dense vector similarity.

@@ -1,0 +1,4 @@
+[build]
+  base = "semantic-book-ui"
+  publish = "dist"
+  command = "npm run build"

@@ -1,4 +1,5 @@
-# Semantic Book Recommender
+# Semantica
+
 
 Modern web application that pairs a semantic-search backend with a glassmorphic React frontend to surface book recommendations that match a reader's curiosity, tone preference, and genre interests.
 

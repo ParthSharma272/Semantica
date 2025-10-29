@@ -3,7 +3,7 @@
 
 Modern web application that pairs a semantic-search backend with a glassmorphic React frontend to surface book recommendations that match a reader's curiosity, tone preference, and genre interests.
 
-<img width="1680" height="930" alt="Screenshot 2025-10-27 at 11 33 59 PM" src="https://github.com/user-attachments/assets/75891fe4-8567-4bec-acf3-6fbfd893cfe1" />
+<img width="1680" height="930" alt="Screenshot 2025-10-30 at 1 07 47 AM" src="https://github.com/user-attachments/assets/6756321d-b90e-49da-8382-017567af8c7b" />
 
 
 ## Live Demo
